@@ -70,6 +70,9 @@ historico.txt
 # Arquivos de API
 api/
 
+# Arquivos de build do Vercel
+web/package.json
+
 # Arquivos de compilação
 *.o
 *.obj
