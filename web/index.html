@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oráculo Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔮 Oráculo Digital 🔮</h1>
+            <div class="profecia-visual">
+                <div class="bola-cristal"></div>
+            </div>
+        </header>
+
+        <main>
+            <div class="chat-box">
+                <div class="chat-messages" id="chatMessages"></div>
+                <div class="input-container">
+                    <textarea id="pergunta" placeholder="Faça sua pergunta ao Oráculo..." rows="2"></textarea>
+                    <button id="enviar" class="btn-enviar"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="explicacao" id="explicacao">
+                <p>Para entender melhor a resposta, clique em "Por que?"</p>
+                <button id="porque" class="btn-porque">Por que?</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
