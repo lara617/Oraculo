@@ -1,0 +1,82 @@
+# Arquivos de compilação
+*.o
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.lib
+*.a
+*.so
+*.dylib
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Arquivos de IDE
+.vs/
+.vscode/
+*.user
+*.userosscache
+*.suo
+*.ncrunch*
+*.userprefs
+
+# Arquivos de build
+build/
+out/
+dist/
+
+# Logs
+*.log
+
+# Pastas temporárias
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Arquivos de cache
+.cache/
+.env
+.env.local
+.env.*.local
+
+# Arquivos de configuração local
+.env.local
+.env.*.local
+
+# Arquivos de backup
+*.bak
+*.backup
+
+# Arquivos de depuração
+*.dSYM/
+
+# Arquivos de teste
+coverage/
+htmlcov/
+
+# Arquivos de build do Vercel
+.next/
+.vercel/
+
+# Arquivos de histórico
+historico.txt
+
+# Arquivos de API
+api/
+
+# Arquivos de compilação
+*.o
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.lib
+*.a
+*.so
+*.dylib
