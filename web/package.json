@@ -1,24 +1,18 @@
 {
+  "$schema": "https://json.schemastore.org/npm-package.json",
   "name": "oracle-digital",
   "version": "1.0.0",
   "description": "Oracle Digital Web Application",
   "main": "index.html",
   "scripts": {
-    "build": "echo 'Static site build complete'",
-    "start": "echo 'Static site running'",
-    "dev": "echo 'Development server running'",
+    "build": "npm run build",
+    "start": "npm run start",
+    "dev": "npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lara617/Oraculo.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lara617/Oraculo/issues"
-  },
-  "homepage": "https://github.com/lara617/Oraculo#readme",
   "private": true
 }

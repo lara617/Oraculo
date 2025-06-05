@@ -5,7 +5,7 @@
       "src": "web/index.html",
       "use": "@vercel/static-build",
       "config": {
-        "framework": "static"
+        "distDir": "dist"
       }
     }
   ],
