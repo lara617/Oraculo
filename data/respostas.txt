@@ -1,0 +1,194 @@
+[ALEGRE,AMOR]
+No amor, a felicidade sorri para ti! Prepara o coração!
+Sim! Um romance vibrante e alegre está a caminho!
+
+[ALEGRE,TRABALHO]
+Sucesso profissional à vista! O teu esforço será recompensado com alegria!
+Boas notícias na carreira te esperam! Celebra!
+
+[ALEGRE,SAUDE]
+Vitalidade e bem-estar! A tua saúde floresce!
+Energia positiva para a tua saúde! Dias leves virão!
+
+[ALEGRE,DINHEIRO]
+A prosperidade financeira sorri para ti! Boas notícias a caminho!
+
+[ALEGRE,AMIGOS_FAMILIA]
+Laços de amizade e família se fortalecem! Momentos felizes virão!
+
+[ALEGRE,VIAGENS]
+Aventura chama! Uma viagem alegre e inesquecível te espera!
+
+[ALEGRE,ESTUDOS]
+Sucesso nos estudos! O conhecimento adquirido trará grandes alegrias!
+
+[ALEGRE,ESPIRITUALIDADE]
+Paz interior e clareza espiritual te guiarão por caminhos iluminados e alegres!
+
+[ALEGRE,OUTROS]
+Tudo conspira a teu favor!
+Sim, e com estilo!
+Sem dúvida! Prepara-te para boas surpresas.
+
+[MISTERIOSO,AMOR]
+No amor, segredos profundos e conexões inesperadas se revelam...
+
+[MISTERIOSO,TRABALHO]
+Na carreira, oportunidades ocultas surgirão. Mantém os olhos abertos.
+
+[MISTERIOSO,SAUDE]
+A cura para o que te aflige pode estar onde menos esperas, investiga os mistérios do teu corpo.
+
+[MISTERIOSO,DINHEIRO]
+Finanças envoltas em mistério... segredos podem ser revelados.
+
+[MISTERIOSO,AMIGOS_FAMILIA]
+Relações com amigos e família guardam mistérios. Observa com atenção.
+
+[MISTERIOSO,VIAGENS]
+Destinos misteriosos te aguardam. Uma viagem reveladora está por vir.
+
+[MISTERIOSO,ESTUDOS]
+O conhecimento profundo está oculto. Procura nas entrelinhas dos teus estudos.
+
+[MISTERIOSO,ESPIRITUALIDADE]
+Mistérios espirituais se revelam. Uma jornada de autoconhecimento te espera.
+
+[MISTERIOSO,OUTROS]
+O destino revela mistérios inesperados...
+Segredos do universo se desvendam...
+
+[IRONICO,AMOR]
+Ah, o amor... claro que vai dar certo. Tão certo quanto o sol nascer no oeste.
+
+[IRONICO,TRABALHO]
+Claro, é só você trabalhar 24 horas por dia que vai dar certo.
+
+[IRONICO,SAUDE]
+Ah, saúde? Claro! Só precisa de 8 horas de sono e uma dieta perfeita.
+
+[IRONICO,DINHEIRO]
+Ah, claro! Dinheiro? É só você ganhar na loteria.
+
+[IRONICO,AMIGOS_FAMILIA]
+Ah, claro! Família feliz? É só você ser perfeito.
+
+[IRONICO,VIAGENS]
+Ah, claro! Viagem? É só você ganhar na loteria e ter tempo livre.
+
+[IRONICO,ESTUDOS]
+Ah, claro! Sucesso nos estudos? É só você estudar 24 horas por dia.
+
+[IRONICO,ESPIRITUALIDADE]
+Ah, claro! Paz interior? É só você ser um monge budista.
+
+[IRONICO,OUTROS]
+Ah, claro! Tudo vai dar certo. Como sempre.
+
+[SOMBRO,AMOR]
+Cuidado com o coração... o amor pode ser uma armadilha.
+
+[SOMBRO,TRABALHO]
+Na carreira, prepare-se para tempos sombrios.
+
+[SOMBRO,SAUDE]
+A saúde pode ser uma ilusão...
+
+[SOMBRO,DINHEIRO]
+As finanças podem ser um pesadelo...
+
+[SOMBRO,AMIGOS_FAMILIA]
+Relações podem ser sombras que nos perseguem...
+
+[SOMBRO,VIAGENS]
+Viagens podem ser caminhos sombrios...
+
+[SOMBRO,ESTUDOS]
+O conhecimento pode ser uma armadilha...
+
+[SOMBRO,ESPIRITUALIDADE]
+A espiritualidade pode ser um caminho sombrio...
+
+[SOMBRO,OUTROS]
+Tempos sombrios se aproximam...
+
+[FILOSOFICO,AMOR]
+O amor é a essência da existência... reflete sobre isso.
+
+[FILOSOFICO,TRABALHO]
+O trabalho é uma busca pela realização...
+
+[FILOSOFICO,SAUDE]
+A saúde é um equilíbrio precário...
+
+[FILOSOFICO,DINHEIRO]
+O dinheiro é uma ilusão...
+
+[FILOSOFICO,AMIGOS_FAMILIA]
+As relações são como laços invisíveis...
+
+[FILOSOFICO,VIAGENS]
+As viagens são uma jornada interior...
+
+[FILOSOFICO,ESTUDOS]
+O conhecimento é uma busca sem fim...
+
+[FILOSOFICO,ESPIRITUALIDADE]
+A espiritualidade é um caminho sem volta...
+
+[FILOSOFICO,OUTROS]
+A vida é uma jornada filosófica...
+
+[BRINCALHAO,AMOR]
+Ah, o amor... é como um jogo de cartas!
+
+[BRINCALHAO,TRABALHO]
+Trabalho? Ah, é só você fingir que está trabalhando!
+
+[BRINCALHAO,SAUDE]
+Ah, saúde? É só você tomar um remédio mágico!
+
+[BRINCALHAO,DINHEIRO]
+Ah, dinheiro? É só você ganhar na loteria!
+
+[BRINCALHAO,AMIGOS_FAMILIA]
+Ah, família feliz? É só você contar uma piada!
+
+[BRINCALHAO,VIAGENS]
+Ah, viagem? É só você fechar os olhos e abrir em outro lugar!
+
+[BRINCALHAO,ESTUDOS]
+Ah, estudos? É só você decorar tudo!
+
+[BRINCALHAO,ESPIRITUALIDADE]
+Ah, espiritualidade? É só você meditar!
+
+[BRINCALHAO,OUTROS]
+Ah, claro! Tudo vai dar certo!
+
+[APOCALIPTICO,AMOR]
+O amor está condenado... prepare-se para o fim.
+
+[APOCALIPTICO,TRABALHO]
+A carreira está prestes a explodir...
+
+[APOCALIPTICO,SAUDE]
+A saúde está em perigo...
+
+[APOCALIPTICO,DINHEIRO]
+As finanças estão em colapso...
+
+[APOCALIPTICO,AMIGOS_FAMILIA]
+As relações estão em crise...
+
+[APOCALIPTICO,VIAGENS]
+As viagens estão proibidas...
+
+[APOCALIPTICO,ESTUDOS]
+O conhecimento está em perigo...
+
+[APOCALIPTICO,ESPIRITUALIDADE]
+A espiritualidade está em crise...
+
+[APOCALIPTICO,OUTROS]
+O mundo está em colapso...

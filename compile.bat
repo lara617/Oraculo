@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-g++ -std=c++17 -Wall -Wextra src/main.cpp -o oraculo.exe
+g++ -std=c++17 -Wall -Wextra src/*.cpp -lcurl -o oraculo.exe
 
 if errorlevel 1 (
     echo Erro ao compilar!

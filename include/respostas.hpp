@@ -5,40 +5,13 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <algorithm> // Para std::transform
 #include "personalidade.hpp"
 
-std::string gerarResposta() {
-    // Nota: std::srand(std::time(nullptr)) deve ser chamado uma vez no main.cpp
+// Função para identificar o tema da pergunta com base em palavras-chave
+Tema identificarTema(const std::string& pergunta);
 
-    std::vector<std::string> templates = {
-        "O destino mostra que: ",
-        "As estrelas sussurram: ",
-        "Sinto nas entrelinhas do universo: ",
-        "O Oráculo responde com mistério: ",
-        "Interprete como quiser, mas "
-    };
-
-    // Lista de todos os humores disponíveis
-    std::vector<Humor> todosOsHumores = {
-        Humor::ALEGRE,
-        Humor::MISTERIOSO,
-        Humor::IRONICO,
-        Humor::SOMBRIO,
-        Humor::FILOSOFICO,
-        Humor::BRINCALHAO,
-        Humor::APOCALIPTICO
-    };
-
-    // Escolhe um humor aleatoriamente
-    Humor humorEscolhido = todosOsHumores[rand() % todosOsHumores.size()];
-
-    // Gera a resposta baseada no humor escolhido
-    std::string respostaBase = respostaPorHumor(humorEscolhido);
-
-    // Escolhe um template aleatoriamente
-    std::string templateSelecionado = templates[rand() % templates.size()];
-
-    return std::string("\n") + introducoesAleatorias() + "\n" + templateSelecionado + respostaBase + "\n";
-}
+// Função para gerar uma resposta completa
+RespostaComExplicacao gerarResposta(const std::string& pergunta);
 
 #endif // RESPOSTAS_HPP
