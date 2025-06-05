@@ -72,6 +72,7 @@ api/
 
 # Arquivos de build do Vercel
 web/package.json
+favicon.ico
 
 # Arquivos de compilação
 *.o

@@ -11,6 +11,10 @@
   ],
   "routes": [
     {
+      "src": "/favicon.ico",
+      "continue": true
+    },
+    {
       "src": "/(.*)",
       "dest": "/$1"
     }
