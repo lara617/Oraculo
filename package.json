@@ -12,5 +12,8 @@
     "type": "git",
     "url": "git+https://github.com/lara617/Oraculo.git"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@vercel/static-build": "^0.1.0"
+  }
 }
