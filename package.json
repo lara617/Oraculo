@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json.schemastore.org/npm-package.json",
   "name": "oracle-digital",
   "version": "1.0.0",
   "description": "Oracle Digital Web Application",
