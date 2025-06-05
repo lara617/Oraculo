@@ -2,20 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "web/build.sh",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist",
-        "framework": "static",
-        "outputDirectory": "dist"
-      }
+      "src": "web/index.html",
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
-    {
-      "src": "/favicon.ico",
-      "continue": true
-    },
     {
       "src": "/(.*)",
       "dest": "/$1"

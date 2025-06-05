@@ -5,17 +5,12 @@
   "description": "Oracle Digital Web Application",
   "main": "index.html",
   "scripts": {
-    "build": "bash build.sh",
     "start": "echo 'Starting static site...'",
-    "dev": "echo 'Development server running...'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lara617/Oraculo.git"
   },
-  "private": true,
-  "dependencies": {
-    "@vercel/static-build": "^0.1.0"
-  }
+  "private": true
 }
