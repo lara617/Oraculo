@@ -1,3 +1,12 @@
+:root {
+    --primary-color: #87CEEB;
+    --secondary-color: #ADD8E6;
+    --background-dark: #1a1a1a;
+    --background-light: #2d2d2d;
+    --text-color: #fff;
+    --shadow-color: rgba(40, 111, 177, 0.5);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,101 +15,555 @@
 }
 
 body {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    color: #fff;
+    margin: 0;
+    padding: 0;
     min-height: 100vh;
+    background: linear-gradient(135deg, var(--background-dark) 0%, var(--background-light) 100%);
+    color: var(--text-color);
+    position: relative;
+    overflow: auto;
+}
+
+/* Fundo místico */
+.universe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('fundo.png') center center/cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    z-index: -2;
+}
+
+/* Estrelas */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Animação das estrelas */
+@keyframes twinkle {
+    0% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+    100% { opacity: 0.7; transform: scale(1); }
+}
+
+
+
+/* Efeitos de fundo */
+.background-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+    animation: floatEffect 20s infinite;
+}
+
+.background-effect:nth-child(1) { top: 10%; left: 20%; }
+.background-effect:nth-child(2) { top: 40%; left: 60%; animation-delay: 5s; }
+.background-effect:nth-child(3) { top: 70%; left: 30%; animation-delay: 10s; }
+
+@keyframes backgroundPulse {
+    0% { background: linear-gradient(135deg, #1a0033 0%, #000000 100%); }
+    50% { background: linear-gradient(135deg, #1a0033 0%, #000000 100%); }
+    100% { background: linear-gradient(135deg, #1a0033 0%, #000000 100%); }
+}
+
+@keyframes floatEffect {
+    0% { transform: scale(0.9) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(10deg); }
+    100% { transform: scale(0.9) rotate(0deg); }
+}
+
+/* Estrelas místicas */
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: starFloat 15s infinite;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.star:nth-child(1) { top: 15%; left: 25%; animation-delay: 0s; }
+.star:nth-child(2) { top: 45%; left: 75%; animation-delay: 2s; }
+.star:nth-child(3) { top: 75%; left: 45%; animation-delay: 4s; }
+.star:nth-child(4) { top: 30%; left: 10%; animation-delay: 6s; }
+.star:nth-child(5) { top: 60%; left: 90%; animation-delay: 8s; }
+
+/* Estrelas maiores e mais brilhantes */
+.big-star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    animation: starTwinkle 10s infinite;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.big-star:nth-child(1) { top: 20%; left: 50%; animation-delay: 1s; }
+.big-star:nth-child(2) { top: 50%; left: 30%; animation-delay: 3s; }
+.big-star:nth-child(3) { top: 80%; left: 70%; animation-delay: 5s; }
+
+@keyframes starFloat {
+    0% { transform: translateY(0) scale(1); opacity: 0.5; }
+    50% { transform: translateY(-10px) scale(1.2); opacity: 0.8; }
+    100% { transform: translateY(0) scale(1); opacity: 0.5; }
+}
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: 0.5; box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+    50% { opacity: 1; box-shadow: 0 0 30px rgba(255, 255, 255, 1); }
+}
+
+/* Ajustando o container */
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px var(--shadow-color);
+    border: 1px solid rgba(0, 255, 0, 0.1);
+    margin: 20px auto;
+}
+
+/* Ajustando o chat para permitir scroll */
+.chat-messages {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Nebulosas */
+.nebula {
+    position: absolute;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    animation: float 20s infinite;
+}
+
+.nebula:nth-child(1) { width: 250px; height: 250px; top: 10%; left: 15%; animation-delay: 0s; }
+.nebula:nth-child(2) { width: 200px; height: 200px; top: 35%; left: 65%; animation-delay: 5s; }
+.nebula:nth-child(3) { width: 150px; height: 150px; top: 60%; left: 25%; animation-delay: 10s; }
+.nebula:nth-child(4) { width: 180px; height: 180px; top: 85%; left: 5%; animation-delay: 15s; }
+.nebula:nth-child(5) { width: 120px; height: 120px; top: 45%; left: 85%; animation-delay: 20s; }
+.nebula:nth-child(6) { width: 160px; height: 160px; top: 25%; left: 45%; animation-delay: 25s; }
+.nebula:nth-child(7) { width: 140px; height: 140px; top: 70%; left: 75%; animation-delay: 30s; }
+
+/* Galáxias */
+.galaxy {
+    position: absolute;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    animation: spin 30s infinite linear;
+}
+
+.galaxy:nth-child(1) { width: 120px; height: 120px; top: 15%; left: 40%; }
+.galaxy:nth-child(2) { width: 100px; height: 100px; top: 50%; left: 20%; animation-delay: 10s; }
+.galaxy:nth-child(3) { width: 80px; height: 80px; top: 75%; left: 80%; animation-delay: 20s; }
+.galaxy:nth-child(4) { width: 110px; height: 110px; top: 35%; left: 60%; animation-delay: 30s; }
+.galaxy:nth-child(5) { width: 90px; height: 90px; top: 60%; left: 30%; animation-delay: 40s; }
+
+/* Estrelas animadas */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite;
+}
+
+/* Adiciona mais estrelas */
+.star:nth-child(1) { top: 10%; left: 20%; animation-delay: 0.1s; }
+.star:nth-child(2) { top: 30%; left: 50%; animation-delay: 0.2s; }
+.star:nth-child(3) { top: 50%; left: 80%; animation-delay: 0.3s; }
+.star:nth-child(4) { top: 70%; left: 30%; animation-delay: 0.4s; }
+.star:nth-child(5) { top: 90%; left: 60%; animation-delay: 0.5s; }
+.star:nth-child(6) { top: 15%; left: 40%; animation-delay: 0.6s; }
+.star:nth-child(7) { top: 45%; left: 25%; animation-delay: 0.7s; }
+.star:nth-child(8) { top: 65%; left: 75%; animation-delay: 0.8s; }
+.star:nth-child(9) { top: 85%; left: 55%; animation-delay: 0.9s; }
+.star:nth-child(10) { top: 25%; left: 65%; animation-delay: 1.0s; }
+.star:nth-child(11) { top: 35%; left: 15%; animation-delay: 1.1s; }
+.star:nth-child(12) { top: 55%; left: 90%; animation-delay: 1.2s; }
+.star:nth-child(13) { top: 75%; left: 45%; animation-delay: 1.3s; }
+.star:nth-child(14) { top: 95%; left: 35%; animation-delay: 1.4s; }
+.star:nth-child(15) { top: 20%; left: 70%; animation-delay: 1.5s; }
+
+/* Cometas */
+.comet {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 50%);
+    animation: fly 10s infinite linear;
+}
+
+.comet:nth-child(1) { top: 10%; left: 0%; animation-delay: 0s; }
+.comet:nth-child(2) { top: 30%; left: 0%; animation-delay: 2s; }
+.comet:nth-child(3) { top: 50%; left: 0%; animation-delay: 4s; }
+.comet:nth-child(4) { top: 70%; left: 0%; animation-delay: 6s; }
+.comet:nth-child(5) { top: 90%; left: 0%; animation-delay: 8s; }
+
+/* Meteoros */
+.meteor {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, rgba(255, 255, 0, 0.8) 0%, rgba(255, 255, 0, 0) 50%);
+    animation: meteor 8s infinite linear;
+}
+
+.meteor:nth-child(1) { top: 5%; left: 0%; animation-delay: 0s; }
+.meteor:nth-child(2) { top: 25%; left: 0%; animation-delay: 2s; }
+.meteor:nth-child(3) { top: 45%; left: 0%; animation-delay: 4s; }
+.meteor:nth-child(4) { top: 65%; left: 0%; animation-delay: 6s; }
+.meteor:nth-child(5) { top: 85%; left: 0%; animation-delay: 8s; }
+
+@keyframes meteor {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(100%) translateY(100%); }
+}
+
+/* Galáxias */
+.galaxy {
+    position: absolute;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    animation: spin 30s infinite linear;
+}
+
+.galaxy:nth-child(1) { width: 100px; height: 100px; top: 10%; left: 50%; }
+.galaxy:nth-child(2) { width: 80px; height: 80px; top: 40%; left: 20%; animation-delay: 10s; }
+.galaxy:nth-child(3) { width: 60px; height: 60px; top: 70%; left: 90%; animation-delay: 20s; }
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Estrelas animadas */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite;
+}
+
+.star:nth-child(1) { top: 10%; left: 20%; animation-delay: 0.1s; }
+.star:nth-child(2) { top: 30%; left: 50%; animation-delay: 0.2s; }
+.star:nth-child(3) { top: 50%; left: 80%; animation-delay: 0.3s; }
+.star:nth-child(4) { top: 70%; left: 30%; animation-delay: 0.4s; }
+.star:nth-child(5) { top: 90%; left: 60%; animation-delay: 0.5s; }
+.star:nth-child(6) { top: 15%; left: 40%; animation-delay: 0.6s; }
+.star:nth-child(7) { top: 45%; left: 25%; animation-delay: 0.7s; }
+.star:nth-child(8) { top: 65%; left: 75%; animation-delay: 0.8s; }
+.star:nth-child(9) { top: 85%; left: 55%; animation-delay: 0.9s; }
+.star:nth-child(10) { top: 25%; left: 65%; animation-delay: 1.0s; }
+
+/* Cometas */
+.comet {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 50%);
+    animation: fly 10s infinite linear;
+}
+
+.comet:nth-child(1) { top: 10%; left: 0%; animation-delay: 0s; }
+.comet:nth-child(2) { top: 30%; left: 0%; animation-delay: 2s; }
+.comet:nth-child(3) { top: 50%; left: 0%; animation-delay: 4s; }
+
+@keyframes fly {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
     padding: 20px;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px var(--shadow-color);
+    border: 1px solid rgba(0, 255, 0, 0.1);
 }
 
 header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 h1 {
-    font-size: 2.5em;
-    color: #00ff00;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
+    font-size: 3em;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--shadow-color);
+    margin-bottom: 25px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textGlow 2s infinite;
+}
+
+@keyframes textGlow {
+    0%, 100% { text-shadow: 0 0 10px var(--shadow-color); }
+    50% { text-shadow: 0 0 20px var(--shadow-color); }
 }
 
 .profecia-visual {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 40px;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 30px;
     position: relative;
 }
 
 .bola-cristal {
-    width: 100%;
-    height: 100%;
+    position: relative;
+    width: 150px;
+    height: 150px;
     background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.5) 100%);
     border-radius: 50%;
-    border: 2px solid #00ff00;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
-    animation: brilho 2s infinite;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    overflow: hidden;
 }
 
-@keyframes brilho {
-    0% { box-shadow: 0 0 20px rgba(0, 255, 0, 0.3); }
-    50% { box-shadow: 0 0 40px rgba(0, 255, 0, 0.5); }
-    100% { box-shadow: 0 0 20px rgba(0, 255, 0, 0.3); }
+.bola-emoji {
+    font-size: 70px;
+    color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.bola-cristal:hover {
+    box-shadow: 0 0 40px rgba(40, 111, 177, 0.5);
+}
+
+.bola-emoji {
+    font-size: 100px;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bola-cristal:hover .bola-emoji {
+    transform: scale(1.2);
+}
+
+.bola-cristal::after {
+    content: '🔮';
+    font-size: 2.5em;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 5px rgba(40, 111, 177, 0.5);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-5px) scale(1.05); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+.bola-cristal::before {
+    display: none;
 }
 
 .chat-box {
     background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    border: 1px solid rgba(135, 206, 235, 0.1);
 }
 
 .chat-messages {
-    height: 400px;
+    height: 450px;
     overflow-y: auto;
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 5px;
+    margin-bottom: 25px;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .message {
-    margin-bottom: 15px;
-    padding: 10px;
-    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    max-width: 70%;
+    position: relative;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 .message.user {
-    background: rgba(0, 255, 0, 0.1);
-    margin-left: 20%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    margin-left: 25%;
+    color: #000;
 }
 
 .message.oracle {
     background: rgba(0, 0, 0, 0.5);
-    margin-right: 20%;
+    margin-right: 25%;
+    border-left: 3px solid var(--primary-color);
 }
 
 .input-container {
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 textarea {
     flex: 1;
-    padding: 10px;
-    border: 2px solid #00ff00;
-    border-radius: 5px;
+    padding: 15px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
     background: rgba(0, 0, 0, 0.2);
-    color: #fff;
+    color: var(--text-color);
     resize: none;
     font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.btn-enviar {
+    background: var(--primary-color);
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-enviar:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.btn-enviar:active {
+    transform: translateY(0);
+}
+
+.btn-porque {
+    background: #ADD8E6;
+    border: 1px solid var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.btn-porque:hover {
+    background: rgba(86, 222, 249, 0.2);
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(98, 167, 232, 0.1);
+}
+
+.explicacao {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.explicacao.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .profecia-visual {
+        width: 200px;
+        height: 200px;
+    }
+
+    .chat-messages {
+        height: 350px;
+    }
 }
 
 button {
-    background: #00ff00;
+    background: #87CEEB;
     color: #000;
     border: none;
     border-radius: 5px;
@@ -110,7 +573,7 @@ button {
 }
 
 button:hover {
-    background: #00cc00;
+    background: #ADD8E6;
 }
 
 .explicacao {

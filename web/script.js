@@ -4,6 +4,93 @@ document.addEventListener('DOMContentLoaded', () => {
     const porqueBtn = document.getElementById('porque');
     const chatMessages = document.getElementById('chatMessages');
     const explicacao = document.getElementById('explicacao');
+    const bolaCristal = document.querySelector('.bola-cristal');
+
+    // Adiciona animação de entrada para a bola de cristal
+    setTimeout(() => {
+        bolaCristal.classList.add('animate__animated', 'animate__pulse');
+    }, 1000);
+
+    // Adiciona animação de digitação para o placeholder
+    const placeholderText = 'Faça sua pergunta ao Oráculo... 🌟';
+    let placeholderIndex = 0;
+    perguntaInput.placeholder = '';
+
+    function typePlaceholder() {
+        if (placeholderIndex < placeholderText.length) {
+            perguntaInput.placeholder += placeholderText.charAt(placeholderIndex);
+            placeholderIndex++;
+            setTimeout(typePlaceholder, 100);
+        }
+    }
+
+    setTimeout(typePlaceholder, 1500);
+
+    // Adiciona efeito de brilho ao passar o mouse
+    bolaCristal.addEventListener('mouseenter', () => {
+        bolaCristal.style.boxShadow = '0 0 50px rgba(0, 255, 0, 0.5)';
+    });
+
+    bolaCristal.addEventListener('mouseleave', () => {
+        bolaCristal.style.boxShadow = '0 0 30px rgba(0, 255, 0, 0.3)';
+    });
+
+    // Adiciona animação ao enviar mensagem
+    enviarBtn.addEventListener('click', () => {
+        const pergunta = perguntaInput.value.trim();
+        if (!pergunta) return;
+
+        // Adiciona a pergunta ao chat com animação
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message user animate__animated animate__fadeInLeft';
+        messageDiv.textContent = pergunta;
+        chatMessages.appendChild(messageDiv);
+        perguntaInput.value = '';
+
+        // Simula um delay para a resposta
+        setTimeout(() => {
+            const resposta = gerarResposta(pergunta);
+            const respostaDiv = document.createElement('div');
+            respostaDiv.className = 'message oracle animate__animated animate__fadeInRight';
+            respostaDiv.textContent = resposta.resposta;
+            chatMessages.appendChild(respostaDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            explicacao.classList.add('active');
+        }, 1000);
+    });
+
+    // Evento do botão "Por que?"
+    porqueBtn.addEventListener('click', () => {
+        const resposta = gerarResposta(perguntaInput.value);
+        const explicacaoDiv = document.createElement('div');
+        explicacaoDiv.className = 'message oracle animate__animated animate__fadeInRight';
+        explicacaoDiv.textContent = resposta.explicacao;
+        chatMessages.appendChild(explicacaoDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        explicacao.classList.remove('active');
+    });
+
+    // Adiciona animação de digitação para as respostas
+    function adicionarMensagem(mensagem, tipo) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${tipo}`;
+        
+        // Adiciona animação de digitação
+        let index = 0;
+        const text = mensagem;
+        
+        function typeText() {
+            if (index < text.length) {
+                messageDiv.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeText, 50);
+            }
+        }
+        
+        typeText();
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
 
     // Dados das respostas (simulando o backend)
     const respostas = {
@@ -42,8 +129,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const temas = {
             AMOR: ["amor", "namoro", "relacionamento", "namorada", "namorado", "esposa", "esposo", "namorar", "casar"],
             TRABALHO: ["trabalho", "emprego", "carreira", "profissão", "cargo", "promover", "demissão", "salário", "chefia"],
-            // Adicione outros temas...
+            FAMÍLIA: ["família", "pai", "mãe", "irmão", "irmã", "filho", "filha", "parente", "relação familiar"],
+            SAÚDE: ["saúde", "doença", "médico", "hospital", "cura", "bem-estar", "exame", "diagnóstico"],
+            DINHEIRO: ["dinheiro", "finanças", "investimento", "economia", "gastos", "contas", "dívida", "herança"],
+            VIAGEM: ["viagem", "viagem", "destino", "viajar", "férias", "turismo", "rota", "jornada"],
+            ESTUDOS: ["estudo", "faculdade", "curso", "aprendizado", "exame", "prova", "disciplina", "aula"],
+            AMIZADE: ["amizade", "amigo", "companheiro", "confiança", "solidariedade", "apoio", "companhia"],
+            ESPIRITUALIDADE: ["espiritualidade", "meditação", "paz", "harmonia", "energia", "aura", "chakra"],
+            GERAL: ["vida", "futuro", "destino", "sorte", "azar", "oportunidade", "sorte", "azar"]
         };
+
+        // Criar estrelas
+        const starsContainer = document.querySelector('.stars');
+        for (let i = 1; i <= 50; i++) {
+            const star = document.createElement('div');
+            star.className = `star-${i}`;
+            starsContainer.appendChild(star);
+        }
 
         // Verifica cada tema
         for (const [tema, palavras] of Object.entries(temas)) {

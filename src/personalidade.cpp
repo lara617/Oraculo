@@ -737,7 +737,11 @@ resposta.resposta = respostas[rand() % respostas.size()];
                     "Porque a espiritualidade é como aquele livro de autoajuda que você compra, mas nunca lê...",
                     "Porque a espiritualidade é como aquele retiro que você planeja, mas nunca vai...",
                     "Porque a espiritualidade é como aquele mantra que você jura que vai repetir, mas nunca repete...",
-                    "Porque a espiritualidade é como aquele curso de meditação que você promete fazer, mas nunca faz..."
+                    "Porque a espiritualidade é como aquele curso de meditação que você promete fazer, mas nunca faz...",
+                    "Porque a espiritualidade é como aquele guru que você promete seguir, mas nunca segue...",
+                    "Porque a espiritualidade é como aquele ritual que você promete fazer, mas nunca faz...",
+                    "Porque a espiritualidade é como aquele livro sagrado que você promete ler, mas nunca lê...",
+                    "Porque a espiritualidade é como aquele caminho que você promete seguir, mas nunca segue..."
                 };
                 resposta.explicacao = expEspiritualidade[rand() % expEspiritualidade.size()];
                 break;

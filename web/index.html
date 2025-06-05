@@ -6,30 +6,73 @@
     <title>Oráculo Digital</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
+    <div class="universe">
+        <div class="stars"></div>
+    </div>
     <div class="container">
+        <!-- JavaScript para estrelas -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const starsContainer = document.querySelector('.stars');
+                for (let i = 1; i <= 50; i++) {
+                    const star = document.createElement('div');
+                    star.className = `star-${i}`;
+                    star.style.position = 'absolute';
+                    star.style.width = '100px';
+                    star.style.height = '100px';
+                    star.style.borderRadius = '50%';  // Faz as estrelas redondas
+                    // 30% das estrelas serão azuis, 70% brancas
+                    const isBlue = Math.random() < 0.3;
+                    star.style.background = isBlue 
+                        ? 'rgba(135, 206, 250, 0.9)'  // Azul claro
+                        : 'rgba(255, 255, 255, 0.9)'; // Branco
+                    star.style.animation = 'twinkle 1.5s infinite';
+                    // Ajustar a escala para manter o tamanho correto
+                    star.style.transform = 'translate(-50%, -50%) scale(0.1)';
+                    star.style.top = `${Math.random() * 100}%`;
+                    star.style.left = `${Math.random() * 100}%`;
+                    starsContainer.appendChild(star);
+                }
+            });
+        </script>
         <header>
-            <h1>🔮 Oráculo Digital 🔮</h1>
+            <h1>🧿 Oráculo Digital 🧿</h1>
             <div class="profecia-visual">
-                <div class="bola-cristal"></div>
+                <div class="bola-cristal">
+                    <div class="glow-effect"></div>
+                </div>
             </div>
         </header>
 
         <main>
             <div class="chat-box">
-                <div class="chat-messages" id="chatMessages"></div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="welcome-message animate__animated animate__fadeIn">
+                        <div class="message oracle">
+                            <p>Bem-vindo ao Oráculo Digital! 🌟</p>
+                            <p>Faça suas perguntas e receba respostas místicas e proféticas.</p>
+                        </div>
+                    </div>
+                </div>
                 <div class="input-container">
-                    <textarea id="pergunta" placeholder="Faça sua pergunta ao Oráculo..." rows="2"></textarea>
-                    <button id="enviar" class="btn-enviar"><i class="fas fa-paper-plane"></i></button>
+                    <textarea id="pergunta" placeholder="Faça sua pergunta ao Oráculo... 🌟" rows="2"></textarea>
+                    <button id="enviar" class="btn-enviar">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Consultar</span>
+                    </button>
                 </div>
             </div>
         </main>
 
         <footer>
             <div class="explicacao" id="explicacao">
-                <p>Para entender melhor a resposta, clique em "Por que?"</p>
-                <button id="porque" class="btn-porque">Por que?</button>
+                <button id="porque" class="btn-porque">
+                    <i class="fas fa-question-circle"></i>
+                    Por que?
+                </button>
             </div>
         </footer>
     </div>
