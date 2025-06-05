@@ -2,10 +2,10 @@
   "version": 2,
   "builds": [
     {
-      "src": "web/build.sh",
+      "src": "web/index.html",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "web"
+        "framework": "static"
       }
     }
   ],

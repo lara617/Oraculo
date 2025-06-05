@@ -19,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/lara617/Oraculo/issues"
   },
-  "homepage": "https://github.com/lara617/Oraculo#readme"
+  "homepage": "https://github.com/lara617/Oraculo#readme",
+  "private": true
 }
