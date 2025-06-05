@@ -6,7 +6,8 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist",
-        "framework": "static"
+        "framework": "static",
+        "outputDirectory": "dist"
       }
     }
   ],

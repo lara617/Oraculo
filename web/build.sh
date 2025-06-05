@@ -6,18 +6,21 @@ echo "Building static site..."
 # Criar diretório de build
 mkdir -p dist
 
-# Copiar arquivos
-for file in web/*; do
-    if [ -f "$file" ]; then
-        cp "$file" dist/
+# Copiar arquivos específicos do diretório web
+files_to_copy=("index.html" "style.css" "script.js")
+for file in "${files_to_copy[@]}"; do
+    if [ -f "web/$file" ]; then
+        echo "Copying file: $file"
+        cp "web/$file" dist/
     fi
 done
 
-# Copiar diretórios
-for dir in web/*/; do
-    if [ -d "$dir" ]; then
-        cp -r "$dir" dist/
-    fi
-done
+# Verificar se o diretório de build não está vazio
+if [ -z "$(ls -A dist)" ]; then
+    echo "Error: Output directory 'dist' is empty!"
+    exit 1
+fi
 
 echo "Build completed successfully!"
+echo "Files in dist directory:"
+ls -R dist/
