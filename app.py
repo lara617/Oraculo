@@ -75,7 +75,7 @@ if __name__ == '__main__':
     print(f"Diretório atual: {os.getcwd()}", file=sys.stderr)
     print(f"Arquivos no diretório: {os.listdir('.')}", file=sys.stderr)
     try:
-        app.run(host='0.0.0.0', port=5000, debug=True)
+        app.run(debug=False, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
     except Exception as e:
         print(f"Erro ao iniciar servidor: {str(e)}", file=sys.stderr)
         print(f"Traceback: {traceback.format_exc()}", file=sys.stderr)
