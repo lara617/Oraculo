@@ -74,7 +74,6 @@ python app.py
 - Estudos
 - Amizade
 - Espiritualidade
-- Geral
 
 ## Personalidades
 
