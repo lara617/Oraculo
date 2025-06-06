@@ -25,7 +25,6 @@ O Oráculo Digital é um sistema web que simula uma bola de cristal mística, ca
 - HTML5
 - CSS3
 - JavaScript
-- Font Awesome para ícones
 
 ## Estrutura do Projeto
 
